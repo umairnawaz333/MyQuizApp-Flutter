@@ -82,6 +82,7 @@ class _quizpageState extends State<quizpage> {
   var random_array;
   List<String> selected_awnser = <String>[];
   String select = "";
+  Timer T;
 
 
   Map<String, Color> btncolor = {
@@ -149,13 +150,15 @@ class _quizpageState extends State<quizpage> {
 
   void starttimer() async {
     const onesec = Duration(seconds: 1);
-    Timer.periodic(onesec, (Timer t) {
+    T = new Timer.periodic(onesec, (Timer t) {
       setState(() {
         if (timer < 1) {
+          print("cancel t t");
           t.cancel();
-          nextquestion();
+          nextbtn();
         } else if (canceltimer == true) {
           t.cancel();
+          print("cancel t c");
         } else {
           timer = timer - 1;
         }
@@ -182,6 +185,7 @@ class _quizpageState extends State<quizpage> {
       btncolor["d"] = Colors.indigoAccent;
       disableAnswer = false;
     });
+    T.cancel();
     starttimer();
   }
 
@@ -228,12 +232,10 @@ class _quizpageState extends State<quizpage> {
       selected_awnser.add("");
     }
 
-
     setState(() {
       canceltimer = true;
       disableAnswer = true;
     });
-    showtimer = 30;
     nextquestion();
   }
 
@@ -267,6 +269,7 @@ class _quizpageState extends State<quizpage> {
 
   @override
   Widget build(BuildContext context) {
+    print(showtimer);
     double a = ((showtimer*10)/3)/100;
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);

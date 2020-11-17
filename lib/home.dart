@@ -33,11 +33,8 @@ class _homepageState extends State<homepage> {
       ),
       child: InkWell(
         onTap: (){
-          Navigator.of(context).pushReplacement(MaterialPageRoute(
-            // in changelog 1 we will pass the langname name to ther other widget class
-            // this name will be used to open a particular JSON file 
-            // for a particular language
-            builder: (context) => getjson(langname),
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context) => getjson(langname),
           ));
         },
         child: Material(

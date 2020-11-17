@@ -107,9 +107,8 @@ class _resultpageState extends State<resultpage> {
               children: <Widget>[
                 OutlineButton(
                   onPressed: (){
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) => homepage(),
-                    ));
+                    Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>
+                        homepage()), (Route<dynamic> route) => false);
                   },
                   child: Text(
                     "Home",
@@ -126,8 +125,8 @@ class _resultpageState extends State<resultpage> {
                 ),
                 OutlineButton(
                   onPressed: (){
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) => reviewpage(mydata: mydata, selected_awnser: selected_awnser, random_array:random_array),
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context) => reviewpage(mydata: mydata, selected_awnser: selected_awnser, random_array:random_array),
                     ));
                   },
                   child: Text(
