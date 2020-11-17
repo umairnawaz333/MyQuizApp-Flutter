@@ -1,0 +1,88 @@
+[
+    {
+        "1": "1Which of the following is not a C++ Header file ?",
+        "2": "2Which function finds out the Variable type in Python ?",
+        "3": "3Which of the following keyword is used to define a function in Python ?",
+        "4": "4Which of the following is a print Function in Python ?",
+        "5": "5Which function finds out the Variable type in Python ?",
+        "6": "6Which of the following keyword is used to define a function in Python ?",
+        "7": "7Which function finds out the Variable type in Python ?",
+        "8": "8Which of the following keyword is used to define a function in Python ?",
+        "9": "9Which function finds out the Variable type in Python ?",
+        "10": "10Which of the following keyword is used to define a function in Python ?"
+    },
+    {
+        "1": {
+            "a": "conio.h",
+            "b": "cstdlib.h",
+            "c": "stdio.h",
+            "d": "math.h"
+        },
+        "2": {
+            "a": "typedef",
+            "b": "typeof",
+            "c": "type",
+            "d": "find"
+        },
+        "3": {
+            "a": "func",
+            "b": "def",
+            "c": "void",
+            "d": "function"
+        },
+        "4": {
+            "a": "cout",
+            "b": "print",
+            "c": "println",
+            "d": "stderr"
+        },
+        "5": {
+            "a": "typedef",
+            "b": "typeof",
+            "c": "type",
+            "d": "find"
+        },
+        "6": {
+            "a": "func",
+            "b": "def",
+            "c": "void",
+            "d": "function"
+        },
+        "7": {
+            "a": "typedef",
+            "b": "typeof",
+            "c": "type",
+            "d": "find"
+        },
+        "8": {
+            "a": "func",
+            "b": "def",
+            "c": "void",
+            "d": "function"
+        },
+        "9": {
+            "a": "typedef",
+            "b": "typeof",
+            "c": "type",
+            "d": "find"
+        },
+        "10": {
+            "a": "func",
+            "b": "def",
+            "c": "void",
+            "d": "function"
+        }
+    },
+    {
+        "1": "stdio.h",
+        "2": "type",
+        "3": "def",
+        "4": "print",
+        "5": "type",
+        "6": "def",
+        "7": "type",
+        "8": "def",
+        "9": "type",
+        "10": "def"
+    }
+]
