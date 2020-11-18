@@ -2,7 +2,7 @@
 > Mobile App Development Assignment Before 2nd Sessional
 
 
-**Features**
+## Features:
 
 * Multiple Screens
 * Start With Splash Screen
