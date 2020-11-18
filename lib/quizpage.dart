@@ -72,10 +72,11 @@ class _quizpageState extends State<quizpage> {
 
   _quizpageState(this.mydata);
 
-  Color colortoshow = Colors.indigoAccent;
+  Color colortoshow = Color.fromRGBO(28, 120, 223, 1);
   Color right = Colors.green;
   Color wrong = Colors.red;
   Color selected = Colors.orange[800];
+  Color bg = Color.fromRGBO(28, 120, 223, 1);
   int marks = 0;
   int i = 1;
   bool disableAnswer = false;
@@ -90,10 +91,10 @@ class _quizpageState extends State<quizpage> {
   Timer T;
 
   Map<String, Color> btncolor = {
-    "a": Colors.indigoAccent,
-    "b": Colors.indigoAccent,
-    "c": Colors.indigoAccent,
-    "d": Colors.indigoAccent,
+    "a": Color.fromRGBO(28, 120, 223, 1),
+    "b": Color.fromRGBO(28, 120, 223, 1),
+    "c": Color.fromRGBO(28, 120, 223, 1),
+    "d": Color.fromRGBO(28, 120, 223, 1),
   };
 
   bool canceltimer = false;
@@ -186,10 +187,10 @@ class _quizpageState extends State<quizpage> {
               random_array: random_array),
         ));
       }
-      btncolor["a"] = Colors.indigoAccent;
-      btncolor["b"] = Colors.indigoAccent;
-      btncolor["c"] = Colors.indigoAccent;
-      btncolor["d"] = Colors.indigoAccent;
+      btncolor["a"] = bg;
+      btncolor["b"] = bg;
+      btncolor["c"] = bg;
+      btncolor["d"] = bg;
       disableAnswer = false;
     });
     T.cancel();
@@ -197,17 +198,6 @@ class _quizpageState extends State<quizpage> {
   }
 
   void checkanswer(String k) {
-    // in the previous version this was
-    // mydata[2]["1"] == mydata[1]["1"][k]
-    // which i forgot to change
-    // so nake sure that this is now corrected
-    // if (mydata[2][i.toString()] == mydata[1][i.toString()][k]) {
-    //   // just a print sattement to check the correct working
-    //   // debugPrint(mydata[2][i.toString()] + " is equal to " + mydata[1][i.toString()][k]);
-    //   marks = marks + 1;
-    //   // changing the color variable to be green
-    //   // colortoshow = right;
-    // }
     colortoshow = selected;
     setState(() {
       // applying the changed color to the particular button that was selected
@@ -219,12 +209,8 @@ class _quizpageState extends State<quizpage> {
 
       btncolor[k] = colortoshow;
       select = k;
-
-      // canceltimer = true;
-      // disableAnswer = true;
     });
-    // nextquestion();
-    // changed timer duration to 1 second
+
   }
 
   void nextbtn() {
@@ -272,8 +258,8 @@ class _quizpageState extends State<quizpage> {
           ],
         ),
         color: btncolor[k],
-        splashColor: Colors.indigo[700],
-        highlightColor: Colors.indigo[700],
+        splashColor: Color.fromRGBO(28, 120, 223, 1),
+        highlightColor: Color.fromRGBO(28, 120, 223, 1),
         minWidth: 200.0,
         height: 45.0,
         shape:
@@ -318,7 +304,7 @@ class _quizpageState extends State<quizpage> {
             LinearProgressIndicator(
               valueColor: new AlwaysStoppedAnimation(Colors.deepOrange),
               value: a,
-              backgroundColor: Colors.deepPurple,
+              backgroundColor: bg,
             ),
             Expanded(
               flex: 2,
@@ -367,10 +353,10 @@ class _quizpageState extends State<quizpage> {
                     ),
                     padding: EdgeInsets.symmetric(
                       vertical: 10.0,
-                      horizontal: 25.0,
+                      horizontal: 45.0,
                     ),
-                    borderSide: BorderSide(width: 3.0, color: Colors.indigo),
-                    splashColor: Colors.indigo,
+                    borderSide: BorderSide(width: 3.0, color: bg),
+                    splashColor: bg,
                   ),
                 ),
               ),

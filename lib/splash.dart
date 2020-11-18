@@ -9,6 +9,7 @@ class splashscreen extends StatefulWidget {
 
 class _splashscreenState extends State<splashscreen> {
 
+  Color bg = Color.fromRGBO(28, 120, 223, 1);
   @override
   void initState(){
     super.initState();
@@ -24,17 +25,32 @@ class _splashscreenState extends State<splashscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.indigo,
-      body: Center(
-        child: Text(
-          "Quizpops",
-          style: TextStyle(
-            fontSize: 50.0,
-            color: Colors.white,
-            fontFamily: "Satisfy",
+      backgroundColor: bg,
+      body: Column(
+        children: [
+          Expanded(
+            flex: 7,
+            child: Center(
+              child: Image(
+                image: AssetImage("images/icon.png"),
+              ),
+            ),
           ),
-          textAlign: TextAlign.center,
-        ),
+          Expanded(
+            flex: 2,
+            child: Center(
+              child: Text(
+                "Quizpops",
+                style: TextStyle(
+                  fontSize: 50.0,
+                  color: Colors.white,
+                  fontFamily: "Satisfy",
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

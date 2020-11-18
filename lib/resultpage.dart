@@ -23,6 +23,8 @@ class _resultpageState extends State<resultpage> {
   String image;
   int marks = 0;
 
+  Color bg = Color.fromRGBO(28, 120, 223, 1);
+
   @override
   void initState(){
     for(int j=0;j<10;j++){
@@ -61,71 +63,68 @@ class _resultpageState extends State<resultpage> {
       body: Column(
         children: <Widget>[
           Expanded(
-            flex: 8,
-            child: Material(
-              elevation: 10.0,
-              child: Container(
-                child: Column(
-                  children: <Widget>[
-                    SizedBox(
-                      height: 15.0,
+            flex: 5,
+            child: Container(
+              child: Column(
+                children: <Widget>[
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 10.0,
+                      horizontal: 15.0,
                     ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 5.0,
-                        horizontal: 15.0,
+                    child: Center(
+                    child: Text(
+                      "Your Score ",
+                      style: TextStyle(
+                        fontSize: 22.0,
+                        fontFamily: "Quando",
                       ),
-                      child: Center(
-                      child: Text(
-                        "Your Score ",
+                    ),
+                  )
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.check,color: Colors.green,size: 40,),
+                      Text(
+                        "  :  "+marks.toString(),
                         style: TextStyle(
-                          fontSize: 18.0,
-                          fontFamily: "Quando",
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                    )
-                    ),
-                    SizedBox(
-                      height: 20.0,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.check,color: Colors.green,),
-                        Text(
-                          " :  "+marks.toString(),
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.bold,
-                          ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.clear,color: Colors.red,size: 40,),
+                      Text(
+                        " :  "+(10-marks).toString(),
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
                         ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 10.0,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.clear,color: Colors.red,),
-                        Text(
-                          " :  "+(10-marks).toString(),
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
+                      ),
+                    ],
+                  )
+                ],
               ),
             ),            
           ),
           Expanded(
-            flex: 2,
+            flex: 4,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -144,8 +143,8 @@ class _resultpageState extends State<resultpage> {
                     vertical: 10.0,
                     horizontal: 25.0,
                   ),
-                  borderSide: BorderSide(width: 3.0, color: Colors.indigo),
-                  splashColor: Colors.indigoAccent,
+                  borderSide: BorderSide(width: 3.0, color: bg),
+                  splashColor: bg,
                 ),
                 OutlineButton(
                   onPressed: (){
@@ -163,8 +162,8 @@ class _resultpageState extends State<resultpage> {
                     vertical: 10.0,
                     horizontal: 25.0,
                   ),
-                  borderSide: BorderSide(width: 3.0, color: Colors.indigo),
-                  splashColor: Colors.indigoAccent,
+                  borderSide: BorderSide(width: 3.0, color: bg),
+                  splashColor: bg,
                 )
               ],
             ),

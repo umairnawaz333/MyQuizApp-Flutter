@@ -10,6 +10,8 @@ class homepage extends StatefulWidget {
 
 class _homepageState extends State<homepage> {
 
+  Color bg = Color.fromRGBO(28, 120, 223, 1);
+
   List<String> images = [
     "images/py.png",
     "images/java.png",
@@ -39,7 +41,7 @@ class _homepageState extends State<homepage> {
           ));
         },
         child: Material(
-          color: Colors.indigoAccent,
+          color: bg,
           elevation: 10.0,
           borderRadius: BorderRadius.circular(25.0),
           child: Container(
@@ -52,7 +54,6 @@ class _homepageState extends State<homepage> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Material(
-
                       elevation: 5.0,
                       borderRadius: BorderRadius.circular(100.0),
                       child: Container(                    // changing from 200 to 150 as to look better
@@ -105,20 +106,20 @@ class _homepageState extends State<homepage> {
             child: Container(
               width: double.infinity,
               decoration: new BoxDecoration(
-                color: Colors.indigo,
+                color: bg,
                 boxShadow: [
-                  new BoxShadow(blurRadius: 40.0)
+                  new BoxShadow(blurRadius: 10.0)
                 ],
                 borderRadius: new BorderRadius.vertical(
                     bottom: new Radius.elliptical(
-                        MediaQuery.of(context).size.width, 100.0)),
+                        MediaQuery.of(context).size.width, 140.0)),
               ),
               alignment: Alignment.center,
               child: Center(
                 child: Text(
                   "Subjects",
                   style: TextStyle(
-                    fontSize: 30.0,
+                    fontSize: 35.0,
                     fontFamily: "Quando",
                     color: Colors.white,
                   ),
