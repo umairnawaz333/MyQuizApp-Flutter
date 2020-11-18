@@ -5,15 +5,14 @@
 ## Features:
 
 * Multiple Screens
-* Start With Splash Screen
-* Category Options ( Update Soon)
-*  Quiz Duration Timer (10 sec By Default)
+* Start With Splash Screen.
+* Each Question has 30 Second as Default.
+* Pick Random Questions.
 * Automaticaly move to Result After Time Complete.
-* Button Color Changes On Click
-* Result Page
-  -Listtile
-  -cards
-* Random Questions Genration Added
+* Button Color Changes On Click.
+* Result Page (Show Score)
+* Category Options ( Update Soon)
+* Review Page - All Questions show with Right Answer and Wrong answer
 
 
 ## ScreenShots:
@@ -26,5 +25,6 @@
  <kbd> <img src="ScreenShots/Screenshot_20201118-174215.jpg" width="200"></kbd>
  
  
+ <br>
  For Upcoming Apps, Follow me 
 [`umairnawaz333`](https://github.com/umairnawaz333) 
