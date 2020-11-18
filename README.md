@@ -1,6 +1,6 @@
 # MyQuizApp-Flutter
 
-SreenShots:
+ScreenShots:
 
 <kbd><img src="ScreenShots/Screenshot_20201118-174109.jpg" width="200"></kbd>
 <kbd><img src="ScreenShots/Screenshot_20201118-174114.jpg" width="200"></kbd>
