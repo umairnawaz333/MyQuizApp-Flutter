@@ -44,7 +44,7 @@ class _reviewpageState extends State<reviewpage> with SingleTickerProviderStateM
         child: Container(
           child: Center(
             child: Container(
-              height: 650,
+              height: 500,
               width: double.infinity,
               child: PageView.builder(
                 itemCount: 10,
@@ -80,7 +80,10 @@ class _reviewpageState extends State<reviewpage> with SingleTickerProviderStateM
                                       SizedBox(height: 10),
                                       Expanded(
                                         flex: 1,
-                                        child: Text(mydata[0][random_array[i].toString()]),
+                                        child: Text(mydata[0][random_array[i].toString()],
+                                        style: TextStyle(
+                                          fontSize: 18.0,
+                                        ),),
                                       ),
                                       SizedBox(height: 20),
                                       Expanded(
@@ -137,14 +140,26 @@ class _reviewpageState extends State<reviewpage> with SingleTickerProviderStateM
       child: MaterialButton(
         onPressed: (){
         },
-        child: Text(
-          mydata[1][random_array[i].toString()][option],
-          style: TextStyle(
-            color: Colors.white,
-            fontFamily: "Alike",
-            fontSize: 14.0,
-          ),
-          maxLines: 1,
+        child: Row(
+          children: [
+            Text(
+              option.toUpperCase()+":      ",
+              style: TextStyle(
+                color: Colors.white,
+                fontFamily: "Alike",
+                fontSize: 18.0,
+              ),
+            ),
+            Text(
+              mydata[1][random_array[i].toString()][option],
+              style: TextStyle(
+                color: Colors.white,
+                fontFamily: "Alike",
+                fontSize: 14.0,
+              ),
+              maxLines: 1,
+            ),
+          ],
         ),
         color: mycolor,
         splashColor: mycolor,

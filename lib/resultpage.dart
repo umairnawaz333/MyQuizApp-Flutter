@@ -67,18 +67,8 @@ class _resultpageState extends State<resultpage> {
               child: Container(
                 child: Column(
                   children: <Widget>[
-                    Material(
-                      child: Container(
-                        width: 200.0,
-                        height: 200.0,
-                        child: ClipRect(
-                          child: Image(
-                            image: AssetImage(
-                              image,
-                            ),
-                          ),
-                        ),
-                      ),
+                    SizedBox(
+                      height: 15.0,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(
@@ -87,7 +77,7 @@ class _resultpageState extends State<resultpage> {
                       ),
                       child: Center(
                       child: Text(
-                        message,
+                        "Your Score ",
                         style: TextStyle(
                           fontSize: 18.0,
                           fontFamily: "Quando",
@@ -95,6 +85,40 @@ class _resultpageState extends State<resultpage> {
                       ),
                     )
                     ),
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.check,color: Colors.green,),
+                        Text(
+                          " :  "+marks.toString(),
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.clear,color: Colors.red,),
+                        Text(
+                          " :  "+(10-marks).toString(),
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),

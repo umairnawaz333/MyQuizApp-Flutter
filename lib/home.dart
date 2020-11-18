@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:quizstar/quizpage.dart';
@@ -42,54 +43,46 @@ class _homepageState extends State<homepage> {
           elevation: 10.0,
           borderRadius: BorderRadius.circular(25.0),
           child: Container(
-            child: Column(
+            child: Row(
               children: <Widget>[
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    vertical: 10.0,
+                    vertical: 0.0,
                   ),
-                  child: Material(
-                    elevation: 5.0,
-                    borderRadius: BorderRadius.circular(100.0),
-                    child: Container(
-                      // changing from 200 to 150 as to look better
-                      height: 150.0,
-                      width: 150.0,
-                      child: ClipOval(
-                        child: Image(
-                          fit: BoxFit.cover,
-                          image: AssetImage(
-                            image,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Material(
+
+                      elevation: 5.0,
+                      borderRadius: BorderRadius.circular(100.0),
+                      child: Container(                    // changing from 200 to 150 as to look better
+                        height: 60.0,
+                        width: 60.0,
+                        child: ClipOval(
+                          child: Image(
+                            fit: BoxFit.cover,
+                            image: AssetImage(
+                              image,
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
                 ),
-                Center(
-                  child: Text(
-                    langname,
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      color: Colors.white,
-                      fontFamily: "Quando",
-                      fontWeight: FontWeight.w700,
+                Expanded(
+                  child: Center(
+                    child: Text(
+                      langname,
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.white,
+                        fontFamily: "Quando",
+                        fontWeight: FontWeight.w700,
+                        
+                      ),
                     ),
                   ),
-                ),
-                Container(
-                  padding: EdgeInsets.all(20.0),
-                  child: Text(
-                    des,
-                    style: TextStyle(
-                      fontSize: 18.0,
-                      color: Colors.white,
-                      fontFamily: "Alike"
-                    ),
-                    maxLines: 5,
-                    textAlign: TextAlign.justify,
-                  ),
-                  
                 ),
               ],
             ),
@@ -105,23 +98,50 @@ class _homepageState extends State<homepage> {
       DeviceOrientation.portraitDown, DeviceOrientation.portraitUp
     ]);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Quizstar",
-          style: TextStyle(
-            fontFamily: "Quando",
+      body: Column(
+        children: [
+          Expanded(
+            flex: 2,
+            child: Container(
+              width: double.infinity,
+              decoration: new BoxDecoration(
+                color: Colors.indigo,
+                boxShadow: [
+                  new BoxShadow(blurRadius: 40.0)
+                ],
+                borderRadius: new BorderRadius.vertical(
+                    bottom: new Radius.elliptical(
+                        MediaQuery.of(context).size.width, 100.0)),
+              ),
+              alignment: Alignment.center,
+              child: Center(
+                child: Text(
+                  "Subjects",
+                  style: TextStyle(
+                    fontSize: 30.0,
+                    fontFamily: "Quando",
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
           ),
-        ),
-      ),
-      body: ListView(
-        children: <Widget>[
-          customcard("Python", images[0], des[0]),
-          customcard("Java", images[1], des[1]),
-          customcard("Javascript", images[2], des[2]),
-          customcard("C++", images[3], des[3]),
-          customcard("Linux", images[4], des[4]),
+          Expanded(
+            flex: 6,
+            child: ListView(
+              children: <Widget>[
+                customcard("Python", images[0], des[0]),
+                customcard("Java", images[1], des[1]),
+                customcard("Javascript", images[2], des[2]),
+                customcard("C++", images[3], des[3]),
+                customcard("Linux", images[4], des[4]),
+              ],
+            ),
+          ),
         ],
       ),
+
+
     );
   }
 }

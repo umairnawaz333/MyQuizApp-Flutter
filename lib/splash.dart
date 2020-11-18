@@ -27,7 +27,7 @@ class _splashscreenState extends State<splashscreen> {
       backgroundColor: Colors.indigo,
       body: Center(
         child: Text(
-          "Quizstar\nTest Yourself !!",
+          "Quizpops",
           style: TextStyle(
             fontSize: 50.0,
             color: Colors.white,

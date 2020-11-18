@@ -9,7 +9,9 @@ class getjson extends StatelessWidget {
   // accept the langname as a parameter
 
   String langname;
+
   getjson(this.langname);
+
   String assettoload;
 
   // a function
@@ -60,12 +62,14 @@ class quizpage extends StatefulWidget {
   final List mydata;
 
   quizpage({Key key, @required this.mydata}) : super(key: key);
+
   @override
   _quizpageState createState() => _quizpageState(mydata);
 }
 
 class _quizpageState extends State<quizpage> {
   final List mydata;
+
   _quizpageState(this.mydata);
 
   Color colortoshow = Colors.indigoAccent;
@@ -75,6 +79,7 @@ class _quizpageState extends State<quizpage> {
   int marks = 0;
   int i = 1;
   bool disableAnswer = false;
+
   // extra varibale to iterate
   int j = 1;
   double timer = 30;
@@ -83,7 +88,6 @@ class _quizpageState extends State<quizpage> {
   List<String> selected_awnser = <String>[];
   String select = "";
   Timer T;
-
 
   Map<String, Color> btncolor = {
     "a": Colors.indigoAccent,
@@ -98,21 +102,21 @@ class _quizpageState extends State<quizpage> {
   // to create the array elements randomly use the dart:math module
   // -----     CODE TO GENERATE ARRAY RANDOMLY
 
-  genrandomarray(){
+  genrandomarray() {
     var distinctIds = [];
     var rand = new Random();
-      for (int i = 0; ;) {
-        distinctIds.add(rand.nextInt(10)+1);
+    for (int i = 0;;) {
+      distinctIds.add(rand.nextInt(10) + 1);
 
-          random_array = distinctIds.toSet().toList();
-          if(random_array.length < 10){
-            continue;
-          }else{
-            break;
-          }
+      random_array = distinctIds.toSet().toList();
+      if (random_array.length < 10) {
+        continue;
+      } else {
+        break;
       }
-      i = random_array[0];
-      print(random_array);
+    }
+    i = random_array[0];
+    print(random_array);
   }
 
   //   var random_array;
@@ -176,7 +180,10 @@ class _quizpageState extends State<quizpage> {
         j++;
       } else {
         Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) => resultpage(mydata: mydata, selected_awnser: selected_awnser, random_array:random_array),
+          builder: (context) => resultpage(
+              mydata: mydata,
+              selected_awnser: selected_awnser,
+              random_array: random_array),
         ));
       }
       btncolor["a"] = Colors.indigoAccent;
@@ -190,7 +197,6 @@ class _quizpageState extends State<quizpage> {
   }
 
   void checkanswer(String k) {
-    
     // in the previous version this was
     // mydata[2]["1"] == mydata[1]["1"][k]
     // which i forgot to change
@@ -219,16 +225,13 @@ class _quizpageState extends State<quizpage> {
     });
     // nextquestion();
     // changed timer duration to 1 second
-
   }
 
-  void nextbtn(){
-
-    if(select != ""){
+  void nextbtn() {
+    if (select != "") {
       selected_awnser.add(select);
       select = "";
-    }
-    else{
+    } else {
       selected_awnser.add("");
     }
 
@@ -247,14 +250,26 @@ class _quizpageState extends State<quizpage> {
       ),
       child: MaterialButton(
         onPressed: () => checkanswer(k),
-        child: Text(
-          mydata[1][i.toString()][k],
-          style: TextStyle(
-            color: Colors.white,
-            fontFamily: "Alike",
-            fontSize: 16.0,
-          ),
-          maxLines: 1,
+        child: Row(
+          children: [
+            Text(
+              k.toUpperCase()+":      ",
+              style: TextStyle(
+                color: Colors.white,
+                fontFamily: "Alike",
+                fontSize: 19.0,
+              ),
+            ),
+            Text(
+              mydata[1][i.toString()][k],
+              style: TextStyle(
+                color: Colors.white,
+                fontFamily: "Alike",
+                fontSize: 16.0,
+              ),
+              maxLines: 1,
+            ),
+          ],
         ),
         color: btncolor[k],
         splashColor: Colors.indigo[700],
@@ -270,7 +285,7 @@ class _quizpageState extends State<quizpage> {
   @override
   Widget build(BuildContext context) {
     print(showtimer);
-    double a = ((showtimer*10)/3)/100;
+    double a = ((showtimer * 10) / 3) / 100;
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
     return WillPopScope(
@@ -306,37 +321,36 @@ class _quizpageState extends State<quizpage> {
               backgroundColor: Colors.deepPurple,
             ),
             Expanded(
-              flex: 3,
-              child: Center(
-                child: Container(
-                  padding: EdgeInsets.all(15.0),
-                  child: Text(
-                    mydata[0][i.toString()],
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontFamily: "Quando",
-                    ),
+              flex: 2,
+              child: Container(
+                margin: EdgeInsets.only(top: 15.0),
+                padding: EdgeInsets.all(20.0),
+                child: Text(
+                  mydata[0][i.toString()],
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: "Quando",
                   ),
                 ),
               ),
             ),
             Expanded(
-                flex: 4,
-                child: AbsorbPointer(
-                  absorbing: disableAnswer,
-                    child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        choicebutton('a'),
-                        choicebutton('b'),
-                        choicebutton('c'),
-                        choicebutton('d'),
-                      ],
-                    ),
+              flex: 5,
+              child: AbsorbPointer(
+                absorbing: disableAnswer,
+                child: Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      choicebutton('a'),
+                      choicebutton('b'),
+                      choicebutton('c'),
+                      choicebutton('d'),
+                    ],
                   ),
                 ),
               ),
+            ),
             Expanded(
               flex: 1,
               child: Container(
@@ -357,7 +371,6 @@ class _quizpageState extends State<quizpage> {
                     ),
                     borderSide: BorderSide(width: 3.0, color: Colors.indigo),
                     splashColor: Colors.indigo,
-
                   ),
                 ),
               ),
