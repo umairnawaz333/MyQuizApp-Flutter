@@ -12,5 +12,5 @@
  <kbd> <img src="ScreenShots/Screenshot_20201118-174215.jpg" width="200"></kbd>
  
  
- For More App, Follow me 
+ For Upcoming Apps, Follow me 
 [`umairnawaz333`](https://github.com/umairnawaz333) 
